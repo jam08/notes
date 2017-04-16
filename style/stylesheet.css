@@ -73,7 +73,7 @@ main {
     -moz-border-radius: 5rem;
     border-radius: 5rem;
     border: 0.1rem solid #fff;
-    padding-bottom: 0.5rem;
+    /* padding-bottom: 0.5rem;*/
     margin: auto auto auto 0.1rem;
     background: rgba(255, 255, 255, 0);
     color: #fff;
