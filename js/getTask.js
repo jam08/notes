@@ -22,7 +22,24 @@ var getNewTask = {
             taskAction.addTask(newTask);
             inputTask.value = "";
         });
-    } 
+    },
+    
+    displayCompleted: function() {
+        var completedBtn = document.getElementById("display-btn");
+        var completedList = document.getElementById("completed-wrapper");
+        completedBtn.addEventListener("click", function(e) { 
+            if(completedList.style.display == "none") {
+                completedList.style.display = "block";
+                completedBtn.innerHTML = "Hide Completed";
+                completedBtn.setAttribute("class", "shown");
+            } else {
+                completedList.style.display = "none";
+                completedBtn.innerHTML = "Show Completed";
+                completedBtn.setAttribute("class", "hidden");
+            }
+        });
+    }  
 }
 
 getNewTask.getTask();
+getNewTask.displayCompleted();

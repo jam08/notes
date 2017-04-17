@@ -19,17 +19,21 @@
             </div>
             </header>
             <section class="tasks">
-                <header class="header-todo">
+                <header class="header-tasks">
                     <h2>To Do</h2>
                 </header>
                 <ul id="todo-list"></ul>
             </section>
-            <section class="completed-list">
-                <header class="header-completed">Completed</header>
+            <section class="tasks" id="completed-wrapper" style="display: none">
+                <header class="header-tasks">
+                    <h2>Completed</h2>
+                </header>
                 <ul id="completed"></ul>
             </section>
+            <div class="display-list">
+                <button type="submit" class="hidden" id="display-btn">Show Completed</button>
+            </div>
         </main>
-        <footer></footer>
         <script src="js/taskActions.js"></script>
         <script src="js/getTask.js"></script>
     </body>
