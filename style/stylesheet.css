@@ -74,12 +74,18 @@ main {
     border-radius: 5rem;
     border: 0.1rem solid #fff;
     padding-bottom: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0;
     margin: auto auto auto 0.1rem;
     background: rgba(255, 255, 255, 0);
     color: #fff;
     font-size: 2rem;
     text-align: center;
+}
+
+#add-button img {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
 }
 
 /*
