@@ -5,19 +5,25 @@ var taskAction = {
         var text = document.createTextNode(task);
         li.appendChild(text);
         li.setAttribute("onclick", "taskAction.update(event)",false);
-        
-        var doneButton = taskAction.addButton("Done");
-        doneButton.setAttribute("onclick", "taskAction.move(event)");
-        
+
+        var checkbox = taskAction.addCheckbox();
         taskAction.ul.appendChild(li);
-        taskAction.ul.appendChild(doneButton);
+        taskAction.ul.appendChild(checkbox);
     },
+    
     addButton: function(typeButton) {
         var newButton = document.createElement("input");
         newButton.setAttribute("type", "submit");
         newButton.setAttribute("class", "btn");
         newButton.setAttribute("value", typeButton);
         return newButton;
+    },
+    addCheckbox: function() {
+        var checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("class", "checkboxes");
+        checkbox.setAttribute("onclick", "taskAction.move(event)");
+        return checkbox;
     },
     
     update: function(event) {
@@ -36,7 +42,7 @@ var taskAction = {
         
         // Update button
         var updateBtn = taskAction.addButton("Update");
-        //input.nextSibling; //Done button
+        //input.nextSibling; //Checkbox
         taskAction.ul.insertBefore(updateBtn, input.nextSibling);
         
         input.addEventListener("blur", function(e) {
@@ -50,8 +56,6 @@ var taskAction = {
             if(code == 13) {
                 listToUpdate.innerHTML = input.value;
                 input.blur();
-                //taskAction.delete(updateBtn);
-                //taskAction.delete(input);
                 listToUpdate.style.display = "block";
             }
         });

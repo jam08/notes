@@ -116,7 +116,7 @@ main {
  
 #todo-list {
     width: 100%;
-    height: auto;
+    min-height: 30rem;
     background-color: #fff;
     margin: 0 auto auto auto;
     padding: 0;
@@ -151,6 +151,22 @@ li {
     background-color: #9775e1;
     font-size: 1.4rem;
     color: #fff;
+}
+
+.checkboxes {
+    width: 2rem;
+    height: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid gainsboro;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkboxes:checked {
+    background-color: #9775e1;
 }
 
 
