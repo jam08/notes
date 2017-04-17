@@ -58,7 +58,7 @@ main {
     border-radius: 2rem;
     border-style: none;
     padding: 0 0 0 1rem;
-    margin: auto 0.1rem auto auto;
+    margin: auto 0.5rem auto auto;
     font-size: 1.4rem;
 }
 
@@ -74,7 +74,7 @@ main {
     border-radius: 5rem;
     border: 0.1rem solid #fff;
     padding: 0;
-    margin: auto auto auto 0.1rem;
+    margin: auto auto auto 0.5rem;
     background: rgba(255, 255, 255, 0);
     color: #fff;  
 }
@@ -84,6 +84,12 @@ main {
     height: 2rem;
     padding: 0;
     margin: auto;
+}
+
+@media only screen(min-width: 60rem) {
+    .page-header {
+        height: 30rem;
+    }
 }
 
 /*
