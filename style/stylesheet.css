@@ -89,15 +89,14 @@ main {
 @media only screen and (min-width: 60em) {
     .page-header {
         height: 30rem;
-    }/*
+    }
     .add-task {
         height: 8rem;
         margin: 4rem auto auto auto;
-    }*/
+    }
     
     #new-task {
         width: 30rem;
-     
     }/*
     #add-button {
         width: 6rem;
