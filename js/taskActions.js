@@ -11,8 +11,9 @@ var taskAction = {
 
         var checkbox = taskAction.addCheckbox();
         
-        div.appendChild(li);
         div.appendChild(checkbox);
+        div.appendChild(li);
+        
         taskAction.ul.appendChild(div);
     },
     
@@ -33,7 +34,7 @@ var taskAction = {
     
     update: function(event) {
         var listToUpdate = event.target;
-        console.log(listToUpdate.nextSibling);
+        console.log(listToUpdate.previousSibling);
         
         var input = document.createElement("input");
         input.setAttribute("type", "text");
@@ -42,14 +43,16 @@ var taskAction = {
         
         listToUpdate.style.display = "none";
         
-        listToUpdate.parentNode.insertBefore(input, listToUpdate.nextSibling);
+        listToUpdate.parentNode.appendChild(input);
+        //listToUpdate.parentNode.insertBefore(input, listToUpdate.nextSibling);
         
         input.focus();
         
         // Update button
         var updateBtn = taskAction.addButton("Update");
         //input.nextSibling; //Checkbox
-        listToUpdate.parentNode.insertBefore(updateBtn, input.nextSibling);
+        listToUpdate.parentNode.appendChild(updateBtn);
+        //listToUpdate.parentNode.insertBefore(updateBtn, input.nextSibling);
         
         input.addEventListener("blur", function(e) {
             taskAction.delete(updateBtn);
@@ -75,7 +78,8 @@ var taskAction = {
     },
     
     move: function(event) {
-        var completedTask = event.target.previousSibling;
+        //var completedTask = event.target.previousSibling;
+        var completedTask = event.target.nextSibling;
         
         var ul = document.getElementById("completed");
         
@@ -83,8 +87,12 @@ var taskAction = {
         var cloned = completedTask.cloneNode(true);
         cloned.removeAttribute("onclick");
         
+        /* Delete div container and its children */
+        var div = completedTask.parentNode;
         taskAction.delete(completedTask);
         taskAction.delete(event.target);
+        taskAction.delete(div);
+        
         
         ul.appendChild(cloned);
         console.log(cloned);

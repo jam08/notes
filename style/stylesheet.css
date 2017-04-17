@@ -127,8 +127,26 @@ main {
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
-    height: auto;
+    height: 6rem;
     margin: auto;
+}
+
+.checkboxes {
+    width: 2rem;
+    height: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid gainsboro;
+    margin: auto 0.5rem auto 2rem;
+    padding: 0;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkboxes:checked {
+    background-color: #9775e1;
 }
 
 li {
@@ -136,7 +154,7 @@ li {
     list-style: none;
     padding: 0;
     font-size: 1.8rem;
-    margin: auto auto auto 2rem;
+    margin: auto auto auto 0.5rem;
 }
 
 .new-input {
@@ -151,28 +169,10 @@ li {
     outline: none;
 }
 
-.checkboxes {
-    width: 2rem;
-    height: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    border-radius: 2rem;
-    border: 0.1rem solid gainsboro;
-    margin: auto 2rem auto auto;
-    padding: 0;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.checkboxes:checked {
-    background-color: #9775e1;
-}
-
 .btn {
     width: 6rem;
     height: 3rem;
-    margin: auto 0 auto auto;
+    margin: auto 2rem auto auto;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     border-radius: 2rem;
