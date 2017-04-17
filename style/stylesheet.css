@@ -89,7 +89,7 @@ main {
 @media only screen and (min-width: 60em) {
     .page-header {
         height: 30rem;
-    }
+    }/*
     .add-task {
         height: 8rem;
         margin: 4rem auto auto auto;
@@ -112,7 +112,7 @@ main {
     #add-button img {
         width: 4rem;
         height: 4rem;
-    }
+    }*/
 }
 
 /*
@@ -233,9 +233,6 @@ li {
 }
 
 @media only screen and (min-width: 60em) {
-    .tasks {
-       
-    }
     .header-tasks {
         height: 8rem;
         top: -4rem;
