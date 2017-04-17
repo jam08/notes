@@ -4,12 +4,12 @@ var taskAction = {
         var div = document.createElement("div");
         div.setAttribute("class", "list-container");
         
+        var checkbox = taskAction.addCheckbox();
+        
         var li = document.createElement("li");
         var text = document.createTextNode(task);
         li.appendChild(text);
         li.setAttribute("onclick", "taskAction.update(event)",false);
-
-        var checkbox = taskAction.addCheckbox();
         
         div.appendChild(checkbox);
         div.appendChild(li);
@@ -18,10 +18,12 @@ var taskAction = {
     },
     
     addButton: function(typeButton) {
-        var newButton = document.createElement("input");
+        var newButton = document.createElement("button");
+        var txt = document.createTextNode(typeButton);
         newButton.setAttribute("type", "submit");
+        newButton.setAttribute("style", "display: none;");
         newButton.setAttribute("class", "btn");
-        newButton.setAttribute("value", typeButton);
+        newButton.appendChild(txt);
         return newButton;
     },
     addCheckbox: function() {
@@ -34,12 +36,11 @@ var taskAction = {
     
     update: function(event) {
         var listToUpdate = event.target;
-        //console.log(listToUpdate.previousSibling);
         
         var input = document.createElement("input");
         input.setAttribute("type", "text");
         input.setAttribute("class", "new-input");
-        input.setAttribute("placeholder", listToUpdate.innerText);
+        input.value = listToUpdate.innerText;
         
         listToUpdate.style.display = "none";
         
@@ -47,15 +48,11 @@ var taskAction = {
         
         input.focus();
         
-        // Update button
-        var updateBtn = taskAction.addButton("Update");
-        //input.nextSibling; //Checkbox
-        listToUpdate.parentNode.appendChild(updateBtn);
-        
         input.addEventListener("blur", function(e) {
-            taskAction.delete(updateBtn);
-            taskAction.delete(input);
+            //updateBtn.style.display = "none";
+            listToUpdate.innerHTML = input.value;
             listToUpdate.style.display = "block";
+            taskAction.delete(input);
         });
         
         input.addEventListener("keydown", function(e) {
@@ -63,20 +60,14 @@ var taskAction = {
             if(code == 13) {
                 listToUpdate.innerHTML = input.value;
                 input.blur();
-                listToUpdate.style.display = "block";
             }
         });
-        
-        updateBtn.addEventListener("click", function() {
-            listToUpdate.style.display = "block";
-            taskAction.delete(updateBtn);
-            taskAction.delete(input);
-        }); 
     },
     
     move: function(event) {
         //var completedTask = event.target.previousSibling;
         var completedTask = event.target.nextSibling;
+        console.log(completedTask);
         
         var ul = document.getElementById("completed");
         
@@ -89,6 +80,8 @@ var taskAction = {
         console.log(div);
         
         var deleteBtn = taskAction.addButton("delete");
+        deleteBtn.removeAttribute("style");
+        event.target.setAttribute("onclick", "taskAction.undo(event)", false);
         div.appendChild(deleteBtn);
 
         ul.appendChild(div);
@@ -98,8 +91,22 @@ var taskAction = {
         });
     },
     
+    undo: function(event) {
+        var div = event.target.parentNode;
+        
+        /* Remove delete button */
+        taskAction.delete(div.lastChild);
+        
+        /* Reset function on checkbox */
+        div.firstChild.setAttribute("onclick", "taskAction.move(event)",false);
+        
+        /* Reset function on list */
+        div.firstChild.nextSibling.setAttribute("onclick", "taskAction.update(event)",false);
+        
+        taskAction.ul.appendChild(div);
+    },
+    
     delete: function(element) {
-        console.log("delete " + element);
         element.parentNode.removeChild(element);
     }   
 }
