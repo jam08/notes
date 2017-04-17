@@ -1,14 +1,19 @@
 var taskAction = {
     ul: document.getElementById("todo-list"),
     addTask: function(task) {
+        var div = document.createElement("div");
+        div.setAttribute("class", "list-container");
+        
         var li = document.createElement("li");
         var text = document.createTextNode(task);
         li.appendChild(text);
         li.setAttribute("onclick", "taskAction.update(event)",false);
 
         var checkbox = taskAction.addCheckbox();
-        taskAction.ul.appendChild(li);
-        taskAction.ul.appendChild(checkbox);
+        
+        div.appendChild(li);
+        div.appendChild(checkbox);
+        taskAction.ul.appendChild(div);
     },
     
     addButton: function(typeButton) {
@@ -28,6 +33,7 @@ var taskAction = {
     
     update: function(event) {
         var listToUpdate = event.target;
+        console.log(listToUpdate.nextSibling);
         
         var input = document.createElement("input");
         input.setAttribute("type", "text");
@@ -36,14 +42,14 @@ var taskAction = {
         
         listToUpdate.style.display = "none";
         
-        taskAction.ul.insertBefore(input, listToUpdate.nextSibling);
+        listToUpdate.parentNode.insertBefore(input, listToUpdate.nextSibling);
         
         input.focus();
         
         // Update button
         var updateBtn = taskAction.addButton("Update");
         //input.nextSibling; //Checkbox
-        taskAction.ul.insertBefore(updateBtn, input.nextSibling);
+        listToUpdate.parentNode.insertBefore(updateBtn, input.nextSibling);
         
         input.addEventListener("blur", function(e) {
             taskAction.delete(updateBtn);
@@ -61,7 +67,7 @@ var taskAction = {
         });
         
         updateBtn.addEventListener("click", function() {
-            taskAction.updateContent(listToUpdate, input);
+            //taskAction.updateContent(listToUpdate, input);
             listToUpdate.style.display = "block";
             taskAction.delete(updateBtn);
             taskAction.delete(input);

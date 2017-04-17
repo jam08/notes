@@ -122,10 +122,21 @@ main {
     padding: 0;
 }
 
+.list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
 li {
+    display: inline;
     list-style: none;
-    padding: 0 0 0 2rem;
+    padding: 0;
     font-size: 1.8rem;
+    margin: auto auto auto 2rem;
 }
 
 .new-input {
@@ -140,19 +151,6 @@ li {
     outline: none;
 }
 
-.btn {
-    width: 8rem;
-    height: 3rem;
-    -webkit-border-radius: 1.5rem;
-    -moz-border-radius: 1.5rem;
-    border-radius: 1.5rem;
-    border-style: none;
-    margin: 0.5rem;
-    background-color: #9775e1;
-    font-size: 1.4rem;
-    color: #fff;
-}
-
 .checkboxes {
     width: 2rem;
     height: 2rem;
@@ -160,6 +158,8 @@ li {
     -moz-border-radius: 2rem;
     border-radius: 2rem;
     border: 0.1rem solid gainsboro;
+    margin: auto 2rem auto auto;
+    padding: 0;
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
@@ -167,6 +167,18 @@ li {
 
 .checkboxes:checked {
     background-color: #9775e1;
+}
+
+.btn {
+    width: 6rem;
+    height: 3rem;
+    margin: auto 0 auto auto;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid  #9775e1;
+    background-color: #fff;
+    color:  #9775e1;
 }
 
 
