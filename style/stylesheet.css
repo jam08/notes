@@ -205,6 +205,7 @@ li {
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     border-radius: 2rem; 
+    -webkit-appearance: none;
     margin: 1rem auto 1rem auto;
 }
 .hidden {
