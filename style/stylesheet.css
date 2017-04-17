@@ -100,6 +100,7 @@ main {
         -webkit-border-radius: 4rem;
         -moz-border-radius: 4rem;
         border-radius: 4rem;
+        font-size: 1.8rem;
     }
     #add-button {
         width: 6rem;
@@ -214,6 +215,23 @@ li {
     background-color: #fff;
     color:  #9775e1;
     font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 60rem) {
+    .header-tasks {
+        height: 8rem;
+        top: -4rem;
+    }
+    .header-tasks h2 {
+        top: 2.5rem;
+    }
+    #todo-list {
+        top: -3rem;
+    }
+    li {
+        font-size: 2rem;
+    }
+    
 }
 /*
  ************************************
