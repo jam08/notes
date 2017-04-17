@@ -90,6 +90,26 @@ main {
     .page-header {
         height: 30rem;
     }
+    .add-task {
+        height: 6rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        border-radius: 2rem;
+    }
+    #new-task {
+        height: 6rem;
+    }
+    #add-button {
+        width: 6rem;
+        height: 6rem;
+        -webkit-border-radius: 7rem;
+        -moz-border-radius: 7rem;
+        border-radius: 7rem;
+    }
+    #add-button img {
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
 /*
