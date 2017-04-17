@@ -86,7 +86,7 @@ main {
     margin: auto;
 }
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 60em) {
     .page-header {
         height: 30rem;
     }
@@ -232,7 +232,7 @@ li {
     top: 1rem;
 }
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 60em) {
     .tasks {
        
     }
