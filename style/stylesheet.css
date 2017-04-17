@@ -172,6 +172,9 @@ li {
     margin: auto 2rem auto auto;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: 2rem;
     border: 0.1rem solid  #9775e1;
     background-color: #fff;
@@ -206,6 +209,8 @@ li {
     -moz-border-radius: 2rem;
     border-radius: 2rem; 
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     margin: 1rem auto 1rem auto;
 }
 .hidden {
