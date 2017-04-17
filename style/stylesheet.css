@@ -90,6 +90,7 @@ main {
     .page-header {
         height: 30rem;
     }
+    
     .add-task {
         height: 8rem;
         margin: 4rem auto auto auto;
@@ -97,18 +98,11 @@ main {
     
     #new-task {
         width: 30rem;
-    }/*
-    #add-button {
-        width: 6rem;
-        height: 6rem;
-        -webkit-border-radius: 7rem;
-        -moz-border-radius: 7rem;
-        border-radius: 7rem;
     }
-    #add-button img {
-        width: 4rem;
-        height: 4rem;
-    }*/
+}
+
+@media only screen and (min-width: 102.4em) {
+    
 }
 
 /*
@@ -241,6 +235,12 @@ li {
     }
     li {
         font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 102.3em) {
+    .tasks {
+        
     }
 }
 
