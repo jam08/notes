@@ -279,7 +279,8 @@ li {
     
     .tasks {
         width: 45%;
-        height: auto;  
+        height: auto; 
+        margin: 1rem;
     }  
     
     #completed-wrapper .header-tasks {
