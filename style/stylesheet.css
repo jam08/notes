@@ -230,7 +230,8 @@ li {
     appearance: none;
     border-radius: 2rem;
     border: 0.1rem solid  #9775e1;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #fcf6f6;
     color:  #9775e1;
     font-size: 1.8rem;
 }
