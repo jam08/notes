@@ -7,7 +7,7 @@ body {
     height: 100vh;
     font-size: 1.8rem;
     margin: 0;
-    background-color: #e0dada;
+    background-color: #fff;
 }
 
 main {
@@ -102,8 +102,30 @@ main {
 }
 
 @media only screen and (min-width: 102.4em) {
+    .page-header {
+        height: 40rem;
+    }
     
+    .page-header h1 {
+        font-size: 4rem;
+    }
+    
+    #new-task {
+        width: 70rem;
+        height: 7rem;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        border-radius: 5rem;
+        font-size: 3rem;
+        padding: 0 0 0 2rem;
+    }
+    
+    #add-button {
+        width: 7rem;
+        height: 7rem;
+    }
 }
+
 
 /*
  ************************************
@@ -123,7 +145,8 @@ main {
     top: -3rem;
     width: 100%;
     height: 6rem;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #fcf6f6;
 }
 .header-tasks h2 {
     position: relative;
@@ -137,9 +160,11 @@ main {
 #todo-list, #completed {
     width: 100%;
     min-height: 30rem;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #fcf6f6;
     margin: 0 auto auto auto;
     padding: 0;
+    box-shadow: 0 5px 5px -3px gray;
 }
 
 #todo-list {
@@ -238,11 +263,35 @@ li {
     }
 }
 
-@media only screen and (min-width: 102.3em) {
+@media only screen and (min-width: 102.4em) {
+    .header-tasks {
+        height: 12rem;
+        top: -6rem;
+    }
+    .header-tasks h2 {
+        font-size: 5rem;
+    }
+    .list-tasks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+    }
+    
     .tasks {
-        
+        width: 45%;
+        height: auto;  
+    }  
+    
+    #completed-wrapper .header-tasks {
+        top: -6rem;
+    }
+    
+    #completed {
+        top: -3rem;
     }
 }
+
 
 /*
  ************************************
@@ -285,4 +334,19 @@ li {
 
 .new-input, #display-btn:focus {
     outline: none;
+}
+
+@media only screen and (min-width: 102.4em) {
+    .display-list {
+        height: 7rem;
+    }
+    
+    #display-btn {
+        width: 30rem;
+        height: 7rem;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        border-radius: 5rem;
+        font-size: 3rem;
+    }
 }
