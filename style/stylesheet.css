@@ -86,7 +86,7 @@ main {
     margin: auto;
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 34em) {
     .page-header {
         height: 30rem;
     }
@@ -101,7 +101,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 102.4em) {
+@media only screen and (min-width: 57em) {
     .page-header {
         height: 40rem;
     }
@@ -247,7 +247,7 @@ li {
     top: 1rem;
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 34em) {
     .header-tasks {
         height: 8rem;
         top: -4rem;
@@ -263,7 +263,7 @@ li {
     }
 }
 
-@media only screen and (min-width: 102.4em) {
+@media only screen and (min-width: 57em) {
     .header-tasks {
         height: 12rem;
         top: -6rem;
@@ -336,7 +336,7 @@ li {
     outline: none;
 }
 
-@media only screen and (min-width: 102.4em) {
+@media only screen and (min-width: 57em) {
     .display-list {
         height: 7rem;
     }
